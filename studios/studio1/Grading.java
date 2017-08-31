@@ -31,12 +31,12 @@ public class Grading {
 		boolean plus = remainder > 7;
 		boolean minus = remainder < 3;
 		
-		System.out.println("name: " + name);
-		System.out.println("Total score: " + totalScore);
-		System.out.println("Grade for this course: " + weightedAverage);
-		System.out.println("Final grade has a... ");
-		System.out.println("Plus: " + plus);
-		System.out.println("Minus: " + minus);		
+		System.out.println("name: " + name + "\n" 
+		+ "Total score: " + totalScore + "\n" 
+		+ "Grade for this course: " + weightedAverage + "\n" 
+		+ "Final grade has a... " + "\n" 
+		+ "Plus: " + plus + "\n" 
+		+ "Minus: " + minus);		
 
 	}
 
