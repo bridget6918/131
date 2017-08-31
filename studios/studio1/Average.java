@@ -12,7 +12,7 @@ public class Average {
 		
 		double avg = (double) (n1 + n2)/2;
 		
-		System.out.println(avg);
+		System.out.println("Average of " + n1 + " and " + n2 + " is " + avg);
 
 	}
 
