@@ -27,8 +27,8 @@ public class Nutrition {
 		double percentFat = (double) Math.round((calFat*100 / statedCals)*10)/10;
 		
 		//determine whether low-carb, low-fat
-		boolean lowCarb = percentCarb < 0.25;
-		boolean lowFat = percentFat < 0.15;
+		boolean lowCarb = percentCarb / 100 < 0.25;
+		boolean lowFat = percentFat / 100 < 0.15;
 		
 		//generate random # and flip a coin
 		double rand = Math.random();
