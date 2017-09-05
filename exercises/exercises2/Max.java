@@ -1,21 +1,29 @@
 package exercises2;
 
+import cse131.ArgsProcessor;
+
 public class Max {
 
 	public static void main(String[] args) {
 		//
 		// Below, prompt the user for two ints, x and y
 		//
-		
-		
+		ArgsProcessor ap = new ArgsProcessor (args);
+		int x = ap.nextInt("Value for x: ");
+		int y = ap.nextInt("Value for y: ");
 		
 		
 		//
 		// Now use what you have learned about conditional
 		//   execution to print the larger of the two values.
 		//
-		
-		
+		boolean larger = x > y;
+		if (larger) {
+			System.out.println("The larger of the two values is: " + x);
+		}
+		else {
+			System.out.println("The larger of the two values is: " + y);
+		}
 		//
 		// Run this program testing on various inputs for
 		//    x and y:  some where x < y, some where x > y,
