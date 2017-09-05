@@ -17,7 +17,9 @@ public class CoinFlip {
 		if (Math.random() < 0.5) {
 			System.out.println("heads");
 		}
-		else {System.out.println("tails");}
+		else {
+			System.out.println("tails");
+			}
 
 	}
 
