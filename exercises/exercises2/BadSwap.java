@@ -15,7 +15,7 @@ public class BadSwap {
 			y = x;     // swap!!
 		}
 		
-		System.out.println("x and y are now"
+		System.out.println("x and y are now "
 				+ x + " and " + y);
 		
 		//
@@ -25,11 +25,13 @@ public class BadSwap {
 		//   Note that the bad swap executes only if x>y
 		//
 		// Your answer:
-		//
-		//
-		//
-		//
-		//
+		//	The first statement in the if bracket
+		//		assigns the value of y to x. 
+		//	Therefore, after the first statement is executed,
+		// 	x and y now have the same value. 
+		//	So instead of swapping the values,
+		//		it simply replaces the value of x with y, 
+		// 		which results in x and y having the same value. 
 		//
 
 	}
