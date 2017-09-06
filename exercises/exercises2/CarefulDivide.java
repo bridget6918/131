@@ -16,7 +16,15 @@ public class CarefulDivide {
 		//   instead of the quotient
 		// Otherwise, print the quotient
 		//
-
+		
+		if (denominator == 0) {
+			System.out.println("The result is undefined because the denominator is 0.");
+		}
+		else {
+			int quotient = numerator / denominator;
+			System.out.println(numerator + " divided by " + denominator
+				+ " = " + quotient);
+		}
 
 
 	}
