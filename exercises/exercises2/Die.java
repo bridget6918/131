@@ -17,7 +17,28 @@ public class Die {
 		//  above integers as output, as if by 
 		//  throw of a die
 		//
-
+		double prob = Math.random();
+		System.out.println(prob);
+		
+		if (prob < 1.0/6.0) {
+			System.out.println("1");
+		}
+		else if (prob < 2.0/6.0) {
+			System.out.println("2");
+		}
+		else if (prob < 3.0/6.0) {
+			System.out.println("3");
+		}
+		else if (prob < 4.0/6.0) {
+			System.out.println("4");
+		}
+		else if (prob < 5.0/6.0) {
+			System.out.println("5");
+		}
+		else {
+			System.out.println("6");
+		}
+		
 	}
 
 }
