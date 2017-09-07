@@ -7,6 +7,7 @@ public class Heads {
 	public static void main(String[] args) {
 		ArgsProcessor ap = new ArgsProcessor (args);
 		int trials = ap.nextInt("How many trials to run?");
+		int sumFlips = 0;
 
 		//beginning of the for loop
 		for (int number = 0; number < trials; number = number + 1) {
@@ -25,11 +26,13 @@ public class Heads {
 
 			}
 			// here, numHeads should be 10
-
+			sumFlips = sumFlips + numFlips;
 			System.out.println("Number of flips was " + numFlips);
 
 			// end of the for loop
 		}
+		double avg = (double) sumFlips / trials;
+		System.out.println("Average number of coin flips to get 10 heads is " + avg);
 	}
 
 }
