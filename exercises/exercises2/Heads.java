@@ -5,9 +5,11 @@ import cse131.ArgsProcessor;
 public class Heads {
 
 	public static void main(String[] args) {
+		ArgsProcessor ap = new ArgsProcessor (args);
+		int trials = ap.nextInt("How many trials to run?");
 
 		//beginning of the for loop
-		for (int number = 0; number < 100; number = number + 1) {
+		for (int number = 0; number < trials; number = number + 1) {
 
 			// what are the concepts?
 			int numHeads = 0;
