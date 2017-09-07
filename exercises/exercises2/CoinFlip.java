@@ -13,7 +13,7 @@ public class CoinFlip {
 		// This program does not prompt the user
 		//   for any input.  It simply prints
 		// heads or tails
-		//
+		
 		if (Math.random() < 0.5) {
 			System.out.println("heads");
 		}
