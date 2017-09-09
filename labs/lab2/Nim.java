@@ -19,10 +19,12 @@ public class Nim {
 		// Loop beings here
 		while (numLeft > 0) {
 			int n = numLeft; // store previous numLeft in n
-			if (numRound == 0) {
-				int numRemoveMan = ap.nextInt("How many sticks do you remove?");
-				int numRemoveComp = Math.random() < 0.5? 1 : 2;
+			if (numRound == 0) {				
 				if (startHuman) {
+					int numRemoveMan = ap.nextInt("Enter either 1 or 2");
+					while (numRemoveMan !=1 && numRemoveMan != 2) {
+						numRemoveMan = ap.nextInt("Please enter either 1 or 2");
+					}
 					numLeft = numBegin - numRemoveMan;
 					humanNext = false;
 					System.out.println("Human starts");
@@ -32,6 +34,7 @@ public class Nim {
 							+ "so " + numLeft + " sticks remain");
 				}
 				else {
+					int numRemoveComp = Math.random() < 0.5? 1 : 2;
 					numLeft = numBegin - numRemoveComp;
 					humanNext = true;
 					System.out.println("Computer starts");
@@ -54,6 +57,9 @@ public class Nim {
 				}
 				else { // this round human plays
 					int numRemoveMan = ap.nextInt("How many sticks do you remove?");
+					while (numRemoveMan !=1 && numRemoveMan != 2) {
+						numRemoveMan = ap.nextInt("Please enter either 1 or 2");
+					}
 					numLeft = n - numRemoveMan;
 					humanNext = false; // make it computer again
 					System.out.println("Round " + numRound + ", "
