@@ -4,6 +4,17 @@ public class CopyArrayAndPigLatin {
 
 	public static void main(String[] args) {
 		String[] names = { "Alice", "Bob", "Carole", "David", "Elaine" };
+		String[] copy = new String[names.length];
+		for (int i = 0; i < names.length; ++i) {
+			copy[i] = names[i] + " Pig Latin";
+		}
+		for (int i = 0; i < names.length; ++i) {
+			System.out.println(names[i]+ "\n" + copy[i]);
+		}
+		// shorthand to iterate over the contents of an array
+		for (String s : copy) {
+			System.out.println("Test array shorthand " + s);
+		}
 		
 		// first copy the above array into an array named copy
 		//  Pretend the names array is large
