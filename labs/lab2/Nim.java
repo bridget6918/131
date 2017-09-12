@@ -14,7 +14,7 @@ public class Nim {
 
 		int numRound = 0;
 		int numLeft = numBegin;
-		boolean humanNext = ap.nextBoolean(); // change this to alter turns
+		boolean humanNext = false; // change this to alter turns
 
 		// Loop beings here
 		while (numLeft > 0) {
