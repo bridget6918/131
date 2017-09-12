@@ -48,24 +48,34 @@ public class Nim {
 			else {
 				if (humanNext == false) { // this round computer plays
 					int numRemoveComp = Math.random() < 0.5? 1 : 2;
-					numLeft = n - numRemoveComp;
-					humanNext = true; // make it human again
-					System.out.println("Round " + numRound + ", "
-							+ n + " sticks at start, "
-							+ "computer took " + numRemoveComp + ", "
-							+ "so " + numLeft + " sticks remain");
+					if (numLeft - numRemoveComp < 0) {
+						System.out.println("You cannot remove more sticks that what are left");;
+					}
+					else {
+						numLeft = n - numRemoveComp;
+						humanNext = true; // make it human again
+						System.out.println("Round " + numRound + ", "
+								+ n + " sticks at start, "
+								+ "computer took " + numRemoveComp + ", "
+								+ "so " + numLeft + " sticks remain");
+					}
 				}
 				else { // this round human plays
 					int numRemoveMan = ap.nextInt("How many sticks do you remove?");
 					while (numRemoveMan !=1 && numRemoveMan != 2) {
 						numRemoveMan = ap.nextInt("Please enter either 1 or 2");
 					}
-					numLeft = n - numRemoveMan;
-					humanNext = false; // make it computer again
-					System.out.println("Round " + numRound + ", "
-							+ n + " sticks at start, "
-							+ "human took " + numRemoveMan + ", "
-							+ "so " + numLeft + " sticks remain");
+					if (numLeft - numRemoveMan < 0) {
+						System.out.println("You cannot remove more sticks that what are left");
+					}
+					else {
+						numLeft = n - numRemoveMan;
+						humanNext = false; // make it computer again
+						System.out.println("Round " + numRound + ", "
+								+ n + " sticks at start, "
+								+ "human took " + numRemoveMan + ", "
+								+ "so " + numLeft + " sticks remain");
+					}
 				}
 				numRound++;
 			}
