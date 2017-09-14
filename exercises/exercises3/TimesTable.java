@@ -17,11 +17,14 @@ public class TimesTable {
 
 		// produce labels before making the table
 		// labeling the columns
+		// and leave enough space before the labels
 		System.out.print("    ");
+		// space between each label (number)
 		for (int j = 0; j <= N; ++j) {
 			System.out.print(j + "  ");
 		}
 		System.out.println();
+		// the length of the ---- separation line
 		for (int j = 0; j <= N+1; ++j) {
 			System.out.print("---");
 		}
