@@ -6,7 +6,7 @@ import sedgewick.Picture;
 
 
 public class Transforms {
-	
+
 	/**
 	 * This one is solved for you.
 	 * @param source
@@ -31,29 +31,75 @@ public class Transforms {
 			}
 		}
 	}
-	
+
 	public static void flipVert(Picture source, Picture target) {
+		for (int x = 0; x < source.width(); x++) {
+			for (int y = 0; y < source.height(); y++) {
+				int otherY = source.height() - 1 - y; 
+				Color c = source.get(x, otherY); 
+				target.set(x, y, c); 
+			}
+		}
 		// FIXME
 	}
-	
-	
+
+
 	public static void flipHorizLeftHalf(Picture source, Picture target) {
+		for (int x=0; x < source.width();++x) {
+			for (int y=0; y < source.height();++y) {
+				if (x >= source.width()/2) {
+					int otherX = source.width() - 1 - x;
+					Color c = source.get(otherX, y);
+					target.set(x, y, c);
+				}
+				if (x < source.width()/2) {
+					int otherX = x;
+					Color c = source.get(otherX, y);
+					target.set(x, y, c);
+				}
+			}
+		}
 		// FIXME
 	}
-	
+
 	public static void flipVertBotHalf(Picture source, Picture target) {
+		for (int y=0; y < source.height();++y) {
+			for (int x=0; x < source.width();++x) {
+				if (y >= source.height()/2) {
+					int otherY = source.height() - 1 - y;
+					Color c = source.get(x, otherY);
+					target.set(x, y, c);
+				}
+				if (y < source.height()/2) {
+					int otherY = y;
+					Color c = source.get(x, otherY);
+					target.set(x, y, c);
+				}
+			}
+		}
+		
 		// FIXME
 	}
-	
+
 	public static void gradient(Picture target) {
+		int amountRed = 0;
+		int amountGreen = 0;
+		for (int x = 0; x < 256; ++x) {
+			for (int y = 0; y < 256; ++y) {
+				amountRed++;
+				amountGreen++;
+				target.set(x, y, new Color (amountRed, amountGreen, 128));
+			}
+		}
+		
 		// FIXME
-				
+
 	}
-	
+
 	public static void edgeDetect(Picture source, Picture target) {
 		// FIXME
 	}
-	
+
 	public static void digitalFilter(Picture source, Picture target) {
 		// FIXME	
 	}
