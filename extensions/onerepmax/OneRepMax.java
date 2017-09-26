@@ -36,10 +36,7 @@ public class OneRepMax {
 				System.out.println("Weight for " + rWant + " reps: " + wWant);
 
 				for (double percent = 0.95; percent > 0.45; percent = percent - 0.05) {
-					wPercent = (int) Math.round((double)percent*max);
-					// 434 % 5 = 4
-					//434 - 434 % 5 = 430 --> 435
-					//(434 + 2.5) 
+					wPercent = (int) ((percent*max) - ((percent*max) % 5));
 					numRep++;
 
 					System.out.println(Math.round(percent*100) + "% 1 RM: " + wPercent);
