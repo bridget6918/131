@@ -13,7 +13,7 @@ import javax.swing.event.ChangeListener;
 
 import sedgewick.StdDraw;
 
-public class EmersonController extends JFrame {
+public class EmersynController extends JFrame {
 
 	private JPanel contentPane;
 
@@ -24,7 +24,7 @@ public class EmersonController extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					EmersonController frame = new EmersonController();
+					EmersynController frame = new EmersynController();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,7 @@ public class EmersonController extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public EmersonController() {
+	public EmersynController() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
