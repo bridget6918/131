@@ -59,8 +59,7 @@ public class Exam2015Test {
 		//			}
 		//		}
 		//		for (int i=0; i < ht.length; ++i) {
-		//			String tosses = ht[i];
-		//			System.out.print(tosses);
+		//			String tosses = tosses + ht[i];
 		//		}
 		//		System.out.println();
 		//		System.out.print(countHead + " " + countTail + " " + countSide);
