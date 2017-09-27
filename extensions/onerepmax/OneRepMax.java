@@ -27,19 +27,35 @@ public class OneRepMax {
 						+ "Desired reps: " + rWant);
 				System.out.println();
 
-				int max = (int) ((int) weight*(1 + (double) r / 30)); // Epley formula
+				int max = (int) (weight*(1.0 + r / 30.0)); // Epley formula
 				int wPercent = 0; 
 				int numRep = 1;
-				int wWant = (int) ((0.95 - (rWant - 1)*0.05)*max);
+				int wWant = (int) (Math.round((max / (1.0 + rWant / 30.0) - 2.5)));
 
-				System.out.println("One-rep max: " + max);
+				if (max % 5 > 2.5) {
+					System.out.println("One-rep max: " + (max - max%5));
+				}
+				else  if (max % 5 < 2.5 && max % 5 != 0){
+					System.out.println("One-rep max: " + (max - max%5 + 5));
+				}
+				else if (max % 5 == 0) {
+					System.out.println("One-rep max: " + max);
+				}
 				System.out.println("Weight for " + rWant + " reps: " + wWant);
 
 				for (double percent = 0.95; percent > 0.45; percent = percent - 0.05) {
-					wPercent = (int) ((percent*max) - ((percent*max) % 5));
+					wPercent = (int) (((Math.round(percent*100.0))/100.0)*max);
 					numRep++;
 
-					System.out.println(Math.round(percent*100) + "% 1 RM: " + wPercent);
+					if (wPercent % 5 > 2.5) {
+						System.out.println(Math.round(percent*100) + "% 1 RM: " + (wPercent - wPercent%5));
+					}
+					else  if (wPercent % 5 < 2.5 && wPercent % 5 != 0){
+						System.out.println(Math.round(percent*100) + "% 1 RM: " + (wPercent - wPercent%5 + 5));
+					}
+					else if (wPercent % 5 == 0) {
+						System.out.println(Math.round(percent*100) + "% 1 RM: " + wPercent);
+					}			
 				}
 			}
 		}
