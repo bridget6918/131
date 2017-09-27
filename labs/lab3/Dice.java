@@ -20,7 +20,6 @@ public class Dice {
 
 		System.out.print("Array contents");
 
-		int sumAll [] = new int [t];
 		int sumNum = 0;
 		int bound = d*6; // boundaries of the sums
 		int sumBound [] = new int [bound]; //include all possible sums
@@ -40,7 +39,6 @@ public class Dice {
 			int index = sum - 1;
 			sumBound[index] = sumBound[index] + 1;
 			// add the new sum into the sumAll array
-			sumAll[j] = sum;
 			System.out.print("Sum = " + sum);
 		}
 		
