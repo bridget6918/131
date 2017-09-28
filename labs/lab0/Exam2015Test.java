@@ -167,5 +167,8 @@ public class Exam2015Test {
 //				System.out.print(i + " ");
 //			}
 //		}
+		double a = Math.round(5.0/3.0);
+		double b = (int) ((5.0/3.0)*1000.0)/1000.0;
+		System.out.println(a + " " + b);
 	}
 }
