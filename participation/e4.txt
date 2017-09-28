@@ -5,15 +5,12 @@ To count, your work must have been done by 2017-09-26T18:00:00+00:00
 Exercise report:
 
 Counts?	Exercise
-Yes	BadSwap.java
-Yes	CarefulDivide.java
-Yes	CoinFlip.java
-Yes	Die.java
-Yes	FeetInches.java
-Yes	Heads.java
-Yes	Loops.java
-Yes	Max.java
-Yes	RandomAverages.java
+Yes	GraphicsDemo.java
+Yes	MouseFollower.java
+Yes	Pitches.java
+No	ReadTwoDouble.java
+Yes	Stats.java
+Yes	WaitPoint.java
 
 -------------
-Score:   100%
+Score:   83%
