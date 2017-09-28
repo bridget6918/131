@@ -77,23 +77,24 @@ public class Transforms {
 				}
 			}
 		}
-		
+
 		// FIXME
 	}
 
 	public static void gradient(Picture target) {
 		int amountRed = 0;
 		int amountGreen = 0;
-		for (int x = 0; x < 256; ++x) {
-			for (int y = 0; y < 256; ++y) {
-				amountRed++;
-				amountGreen++;
-				target.set(x, y, new Color (amountRed, amountGreen, 128));
+		int width = target.width();
+		int height = target.height();
+		for (int x=0; x < width; ++x) {
+			for (int y=0; y < height; ++y) {
+				amountRed = (int) ((x*1.0 / width) * 255);
+				amountGreen = (int) ((y*1.0 / height) * 255);
+				target.set(x, y, new Color(amountRed, amountGreen, 128));
 			}
 		}
-		
+ 
 		// FIXME
-
 	}
 
 	public static void edgeDetect(Picture source, Picture target) {
