@@ -104,16 +104,16 @@ public class Exam2015Test {
 		//		}
 
 		// Solution 2
-		//		int [] count = new int [N];
-		//		int index = 0;
-		//
-		//		for (int c=0; c < N; ++c) {
-		//				index = poll[c];
-		//				count[index-1] = count[index-1] + 1;				
-		//		}
-		//		for (int i=0; i < M; ++i) {
-		//			System.out.println("Candidate " + (i+1) + " received " + count[i] + " votes");
-		//		}
+		//				int [] count = new int [N];
+		//				int index = 0;
+		//		
+		//				for (int c=0; c < N; ++c) {
+		//						index = poll[c];
+		//						count[index-1] = count[index-1] + 1;				
+		//				}
+		//				for (int i=0; i < M; ++i) {
+		//					System.out.println("Candidate " + (i+1) + " received " + count[i] + " votes");
+		//				}
 
 		// Exam Fall 2013
 
@@ -150,22 +150,22 @@ public class Exam2015Test {
 		//		System.out.println(max);
 
 		// Question 4
-		int N = ap.nextInt("How many?");
-		boolean [] sieve = new boolean [N];
-
-		for (int i=0; i < N; ++i) {
-			sieve[i] = true;
-		}
-
-		for (int i=1; i < N; ++i) {
-			for (int j=7*i; j < N; j = j+7) {
-				sieve[j] = false;
-				sieve[j+1] = false;
-				sieve[j-1] = false;
-			}
-			if (sieve[i]) {
-				System.out.print(i + " ");
-			}
-		}
+//		int N = ap.nextInt("How many?");
+//		boolean [] sieve = new boolean [N];
+//
+//		for (int i=0; i < N; ++i) {
+//			sieve[i] = true;
+//		}
+//
+//		for (int i=1; i < N; ++i) {
+//			for (int j=7*i; j < N; j = j+7) {
+//				sieve[j] = false;
+//				sieve[j+1] = false;
+//				sieve[j-1] = false;
+//			}
+//			if (sieve[i]) {
+//				System.out.print(i + " ");
+//			}
+//		}
 	}
 }
