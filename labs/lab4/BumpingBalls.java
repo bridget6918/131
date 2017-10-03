@@ -1,5 +1,7 @@
 package lab4;
 
+import java.awt.Color;
+
 import cse131.ArgsProcessor;
 import sedgewick.StdDraw;
 
@@ -29,14 +31,14 @@ public class BumpingBalls {
 
 			rx[i] = Math.random();
 			ry[i] = Math.random();
-			vx[i] = Math.random()*0.5;
-			vy[i] = Math.random()*0.5;
+			vx[i] = Math.random()*0.005;
+			vy[i] = Math.random()*0.005;
 		}
 
 		for (int i=0; i < iteration; ++i) {
 			for (int j=0; j < ball; ++j) {
+				for (int b=0; b < ball; ++b) {
 
-					double dist = Math.sqrt((Math.pow((rx[j]), 2)) + (Math.pow((ry[j]), 2)));
 
 					// bounce off wall according to law of elastic collision
 					if (Math.abs(rx[j] + vx[j]) > 1.0 - radius) {
@@ -46,35 +48,30 @@ public class BumpingBalls {
 						vy[j] = -vy[j];
 					}
 
+					rx[j] = rx[j] + vx[j];
+					ry[j] = ry[j] + vy[j];
+
 					// if the balls collide
-					if (dist <= radius*2) {
-						vx[j] = - vx[j];
-						vy[j] = - vy[j];
-						rx[j] = - rx[j];
-						ry[j] = - ry[j];
+					if (i!=b) {
+						double dist = Math.sqrt((Math.pow((rx[j]-rx[b]), 2)) + (Math.pow((ry[j]-ry[b]), 2)));
+						if (dist <= radius*2.0) {
+							vx[j] = - vx[j];
+							vy[j] = - vy[j];
+							vx[b] = - vx[b];
+							vy[b] = - vy[b];
+							// update position
+							rx[j] = rx[j] + vx[j]; 
+							ry[j] = ry[j] + vy[j]; 
+							rx[b] = rx[b] + vx[b];
+							ry[b] = ry[b] + vy[b];
+						}
 					}
-
-					// update position
-					rx[j] = rx[j] + vx[j]; 
-					ry[j] = ry[j] + vy[j]; 
-					
-					// draw ball on the screen
-					if(rx[j] < 0)
-					{
-						StdDraw.setPenColor(StdDraw.GREEN);
-					}
-					else
-					{
-						StdDraw.setPenColor(StdDraw.BLUE);
-					}
-					StdDraw.filledCircle(rx[j], ry[j], radius); 
-
-					// display and pause for 20 ms
-					StdDraw.show(pause); 
 				}
-				// clear the background
-				StdDraw.clear();
+				StdDraw.setPenColor(Color.BLUE);
+				StdDraw.filledCircle(rx[j], ry[j], radius); 
 			}
+			StdDraw.show(pause); 
+			StdDraw.clear();
+		}
 	}
-
 }
