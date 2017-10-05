@@ -12,6 +12,7 @@ public class MethodsTest {
 		// Try something simple
 		//
 		assertEquals(7, Methods.sum(3, 4));
+		assertEquals(-7, Methods.sum(-3, -4));
 		//
 		// Try something fancier
 		//
@@ -22,8 +23,8 @@ public class MethodsTest {
 	
 	@Test
 	public void thisTestShouldFail() {
-		assertEquals(1, Methods.mpy(0,3));
-		assertEquals(1, Methods.mpy(2, 5));
+		assertEquals(0, Methods.mpy(0,3));
+		assertEquals(0, Methods.mpy(2, 5));
 	}
 	
 	@Test
@@ -45,6 +46,11 @@ public class MethodsTest {
 	@Test
 	public void testAverage() {
 		assertEquals(0.5, Methods.average(new double[] { 0, 1 }), 0.1);
+	}
+	
+	@Test
+	public void testMax() {
+		assertEquals(3, Methods.max(new double[] {0, 1, 2, 3}), 0.1);
 	}
 
 }
