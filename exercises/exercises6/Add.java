@@ -8,7 +8,14 @@ public class Add {
 	//   add(x,y) = add(x+1,y-1), otherwise
 	//
 	public static int add(int x, int y) {
-		return 0;  // FIXME
+		if (y == 0) {
+			// base case
+			return x;
+		}
+		else {
+			// recursive case
+			return add(x+1, y-1);
+		}  // FIXME
 	}
 	
 	//
@@ -17,7 +24,7 @@ public class Add {
 	//  For what values of x and y does your method operate correctly?
 	//
 	//  Your answer:
-	//
+	//		When y >= 0
 	//  Can you complete the following method
 	//   so that it calls add but returns the correct answer
 	//   for any x and y?
@@ -26,8 +33,14 @@ public class Add {
 	public static int addAny(int x, int y) {
 		if (y >= 0)
 			return add(x,y);
-		else
-			return 0; // FIXME
+		else {
+			if (x < 0) {
+				return -add(-x, -y); // FIXME
+			}
+			else {
+				return add(y, x);
+			}
+		}
 	}
 
 }
