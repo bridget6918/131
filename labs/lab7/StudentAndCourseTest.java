@@ -23,10 +23,10 @@ public class StudentAndCourseTest extends TestCase {
 		Student s = new Student("Doug", "Shook", 111111);
 		assertEquals("Doug Shook", s.getName());
 		assertEquals(111111, s.getStudentID());
-		//No credits, should be a freshman, no GPA
+		//No credits, should be a FirstYear, no GPA
 		assertEquals(0.0, s.getGPA());
 		assertEquals(0, s.getCredits());
-		assertEquals("Freshman", s.getClassStanding());
+		assertEquals("FirstYear", s.getClassStanding());
 		for (int i = 0; i < 20; ++i) {
 			double a =  (Math.random() * 5000);
 			double b =  (Math.random() * 5000);
@@ -35,7 +35,7 @@ public class StudentAndCourseTest extends TestCase {
 			assertEquals(s1, a + " " + b, s3.getName());
 			assertEquals(s2, 0.0, s3.getGPA());
 			assertEquals(s4, 0, s3.getCredits());
-			assertEquals(s5, "Freshman", s3.getClassStanding());
+			assertEquals(s5, "FirstYear", s3.getClassStanding());
 		}
 	}
 
@@ -44,7 +44,7 @@ public class StudentAndCourseTest extends TestCase {
 		Student s = new Student("D", "S", 1);
 		for (int i = 0; i < 29; i++) {
 			s.submitGrade(1.0, 1);
-			assertEquals(s9, "Freshman", s.getClassStanding());
+			assertEquals(s9, "FirstYear", s.getClassStanding());
 		}
 
 		for (int i = 0; i < 30; i++) {
