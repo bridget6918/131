@@ -13,7 +13,7 @@ public class Beer {
 			return "0 bottles of beer on the wall";
 		}
 		else {
-			return n + " bottles of beer on the wall, " + n + " bottles of beer; you take one down, pass it around, ";
+			return n + " bottles of beer on the wall, " + n + " bottles of beer; you take one down, pass it around, " + (n-1) + " bottles of beer on the wall.";
 		}
 	}
 	
