@@ -3,7 +3,11 @@ package lab6;
 import cse131.ArgsProcessor;
 
 public class Beer {
-
+	/**
+	 * 
+	 * @param n integer n (bottles of beer to start with)
+	 * @return print the camp song
+	 */
 	public static String bottlesOfBeer (int n) {
 		if (n == 0) {
 			return "0 bottles of beer on the wall";
