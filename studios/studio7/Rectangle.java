@@ -4,8 +4,6 @@ public class Rectangle {
 	
 	private int length;
 	private int width;
-	private int lengthR;
-	private int widthR;
 	
 	/**
 	 * 
@@ -15,8 +13,6 @@ public class Rectangle {
 	public Rectangle(int length, int width) {
 		this.length = length;
 		this.width = width;
-		lengthR = width;
-		widthR = length;
 	}
 	
 	/**
@@ -47,6 +43,11 @@ public class Rectangle {
 			return false;
 		}
 	}
+
+	public Rectangle createRotated90() {
+		Rectangle result = new Rectangle(this.width, this.length);
+		return result;
+	}
 	
 	public String toString() {
 		return " a rectangle with a length of " + length 
@@ -55,6 +56,8 @@ public class Rectangle {
 	
 	public static void main(String[] args) {
 		Rectangle r1 = new Rectangle(2, 5);
+		
+		Rectangle r1Flipped = r1.createRotated90();
 		Rectangle r2 = new Rectangle(3, 3);
 		if (r1.area() > r2.area()) {
 			System.out.println("Rectangle 1, " + r1 + " has a greater area of " + r1.area());
@@ -66,7 +69,6 @@ public class Rectangle {
 		System.out.println("Is Rectangle 2 a square? " + r2.isSquare());
 		
 		System.out.println();
-		System.out.println("If Rectangle 1 is rotated, its new length and width become " + r1.lengthR + " and " + r1.widthR);
 	}
 
 }
