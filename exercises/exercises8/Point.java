@@ -1,6 +1,8 @@
 package exercises8;
 
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 public class Point {
@@ -32,6 +34,7 @@ public class Point {
 		return "Point [x=" + x + ", y=" + y + "]";
 	}
 
+	// if two objects .equal each other, their hashCodes must be the same
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -39,6 +42,9 @@ public class Point {
 		result = prime * result + x;
 		result = prime * result + y;
 		return result;
+		// this does not work b/c breaks contract
+//		return (int)(Math.random()*100000);
+//		return 0;
 	}
 
 	@Override
@@ -55,13 +61,17 @@ public class Point {
 		if (y != other.y)
 			return false;
 		return true;
+//		return false;
 	}
 
 	public static void main(String[] args) {
-		Set<Point> set = new HashSet<Point>();
-		set.add(new Point(131, 132));
-		set.add(new Point(131,132));
-		System.out.println("Set has " + set);		
+		List<Point> list = new LinkedList<Point>();
+		list.add(new Point(131, 132));
+		list.add(new Point(131,132));
+		list.add(new Point(0, 0));
+		System.out.println("List has " + list);	
+		boolean has = list.contains(new Point(0,0));
+		System.out.println(has);
 	}
 
 }
