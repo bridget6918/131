@@ -27,11 +27,13 @@ public class Weather {
 		// to isolate the temperature reading
 		// report that as your output
 		//
-		System.out.println("Temperature is "); // FIXME
+//		int location = wholeThing.indexOf("\",\"temperature\":");
+//		System.out.println(location);
+		//System.out.println("Temperature is "); // FIXME
 		//
 		// And find one more statistic of interest and report that:
 		//
-		System.out.println("And xxxx is ");  // FIXME
+		//System.out.println("And xxxx is ");  // FIXME
 
 	}
 
