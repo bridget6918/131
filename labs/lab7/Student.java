@@ -1,5 +1,9 @@
 package lab7;
 
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
 public class Student {
 
 	private String fname;
@@ -13,11 +17,23 @@ public class Student {
 	 * 
 	 * @param fname first name
 	 * @param lname last name
+	 * @param ID student ID
+	 */
+	public Student(String fname, String lname, int ID) {
+		this.fname = fname;
+		this.lname = lname;
+		this.ID = ID;
+	}
+	
+	/**
+	 * 
+	 * @param fname first name
+	 * @param lname last name
 	 * @param ID unique student ID
 	 * @param credits number of credits
 	 * @param GPA GPA of the student
 	 */
-	public Student(String fname, String lname, int ID) {
+	private Student(String fname, String lname, int ID, int credits, double GPA) {
 		this.fname = fname;
 		this.lname = lname;
 		this.ID = ID;
@@ -25,6 +41,23 @@ public class Student {
 		this.GPA = GPA;
 	}
 
+	
+	/**
+	 * 
+	 * @param otherParent other student as the other parent
+	 * @return the baby (fname, lname, ID, GPA, credits)
+	 */
+	public Student createLegacy(Student otherParent) {
+		String babyFName = this.getName();
+		String babyLName = otherParent.getName();
+		int babyID = this.getStudentID() + otherParent.getStudentID();
+		int babyCredits = Math.max(this.getCredits(), otherParent.getCredits());
+		double babyGPA = (this.getGPA() + otherParent.getGPA())/2;
+		
+		Student baby = new Student(babyFName, babyLName, babyID, babyCredits, babyGPA);
+		return baby;
+	}
+	
 	public String getName() {
 		return fname + " " + lname;
 	}
@@ -58,17 +91,17 @@ public class Student {
 
 	/**
 	 * 
-	 * @param grade grade for the course
-	 * @param credits credits for the course3333
+	 * @param g grade for the course
+	 * @param c credits for the course
 	 */
-	public void submitGrade (double grade, int credits) {
-		this.credits = this.credits + credits;
-		gpatotal = gpatotal + grade*credits;
-		this.GPA = ((int)(gpatotal*1000.0) / this.credits)/1000.0;
+	public double submitGrade (double g, int c) {
+		this.credits = this.credits + c;
+		this.gpatotal = gpatotal + g*c;
+		this.GPA = Math.round((gpatotal*1000.0) / credits)/1000.0;
+		return this.GPA;
 	}
 	
 	public String toString() {
 		return fname + lname + ID;
 	}
-	
 }
