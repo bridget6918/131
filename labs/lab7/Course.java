@@ -9,7 +9,7 @@ public class Course {
 	private int seats;
 	private int enroll;
 	private double sumGPA;
-	private String roster;
+	private String[] roster;
 
 	/**
 	 * 
@@ -23,6 +23,7 @@ public class Course {
 		this.seats = seats;
 		this.sumGPA = 0;
 		enroll = 0;
+		roster = new String[enroll+seats];
 	}
 
 	/**
@@ -51,7 +52,9 @@ public class Course {
 				seats--;
 				enroll++;
 				sumGPA = sumGPA + s.getGPA();
-				roster = roster + s.getName();
+				for (int i=0; i < enroll + seats; ++i) {
+					roster[i] = s.getName();
+				}
 				return true;
 			}
 			else {
@@ -64,7 +67,7 @@ public class Course {
 	 * @return generate a roster with all enrolled students in the class
 	 */
 	public String generateRoster() {
-		return roster;
+		return Arrays.toString(roster);
 	}
 
 
