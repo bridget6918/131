@@ -151,7 +151,7 @@ public class TicTacToe  {
 			if (board[0][c] == player && board[1][c] == player && board[2][c] == player) {
 				return true;
 			}
-		}
+		} 
 		return false;
 	}
 }
