@@ -25,10 +25,18 @@ public class Course {
 		enroll = 0;
 	}
 
+	/**
+	 * 
+	 * @return name of the course
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * 
+	 * @return how many seats remaining in the class
+	 */
 	public int getRemainingSeats() {
 		return seats;
 	}
@@ -51,11 +59,19 @@ public class Course {
 			}
 	}
 
+	/**
+	 * 
+	 * @return generate a roster with all enrolled students in the class
+	 */
 	public String generateRoster() {
 		return roster;
 	}
 
 
+	/**
+	 * 
+	 * @return average GPA of the class
+	 */
 	public double averageGPA() {
 		double averageGPA = sumGPA / enroll;
 		return averageGPA;
