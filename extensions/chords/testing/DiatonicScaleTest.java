@@ -31,14 +31,14 @@ public class DiatonicScaleTest {
 			
 			int octaveAbovePitch = pitch + 7;
 			assertEquals("Key "  + key + " and pitch " + octaveAbovePitch + " should be A above concert A (880 Hz)", 
-					new DiatonicScale(key).getPitch(octaveAbovePitch).getHertz(), 
 					880, 
+					new DiatonicScale(key).getPitch(octaveAbovePitch).getHertz(), 
 					.001
 					);
 			int octaveBelowPitch = pitch - 7;
-			assertEquals("Key "  + key + " and pitch " + octaveBelowPitch + " should be A above concert A (880 Hz)", 
-					new DiatonicScale(key).getPitch(octaveBelowPitch).getHertz(), 
+			assertEquals("Key "  + key + " and pitch " + octaveBelowPitch + " should be A below concert A (220 Hz)", 
 					220, 
+					new DiatonicScale(key).getPitch(octaveBelowPitch).getHertz(), 
 					.001
 					);
 		}
