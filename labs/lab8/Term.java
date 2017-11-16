@@ -73,7 +73,7 @@ public class Term {
 
 	@Override
 	public String toString() {
-		return "Term [coef=" + coef + ", x, ^, degree=" + degree + "]";
+		return coef + "x^" + degree;
 	}
 	
 		
