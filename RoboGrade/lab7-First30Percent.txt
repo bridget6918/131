@@ -1,17 +1,17 @@
 -------------------
-CSE247 Robot tester starts testing lab7 on 2017-11-11 13:02:02 -0600
+CSE247 Robot tester starts testing lab7 on 2017-11-15 21:45:36 -0600
 
 ========
-Testing in ./GradingRepos/./cse131-f17-students-bridget.wang: lab7 as of 2017-10-31 20:00
+Testing in ./GradingRepos/./cse131-f17-students-bridget.wang: lab7 as of 2017-11-07 20:00
 ========
 Now in: /Users/roncytron/Desktop/131f17/cse247-support/GradingRepos/cse131-f17-students-bridget.wang
 Your branch is up-to-date with 'origin/master'.
-HEAD is now at 830adb8 Merge remote-tracking branch 'upstream/master'
+HEAD is now at a962131 lab 8 term
 No local changes to save
 
 Already up-to-date.
-Going back in time to: 2017-10-31 20:00
-At hash aa30d35e823b7324e46ad26fd78fa23e09097036
+Going back in time to: 2017-11-07 20:00
+At hash 230542960748e27deaa4a5eabf36bb3cb83dd342
 
 Buildfile: /Users/roncytron/Desktop/131f17/cse247-support/build.xml
 
@@ -35,6 +35,7 @@ Buildfile: /Users/roncytron/Desktop/131f17/cse247-support/build.xml
 
 compile:
      [echo] Compiling lab7/Course
+    [javac] Compiling 1 source file to /Users/roncytron/Desktop/131f17/cse247-support/GradingRepos/cse131-f17-students-bridget.wang/bin
 
 BUILD SUCCESSFUL
 Total time: 0 seconds
@@ -52,13 +53,13 @@ Buildfile: /Users/roncytron/Desktop/131f17/cse247-support/build.xml
 test:
     [junit] Running lab7.First30Percent
     [junit] Testsuite: lab7.First30Percent
-    [junit] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
-    [junit] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+    [junit] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+    [junit] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
     [junit] 
-    [junit] Testcase: testSubmitGrade took 0.002 sec
+    [junit] Testcase: testSubmitGrade took 0.003 sec
     [junit] Testcase: testGetClassStanding took 0 sec
     [junit] Testcase: testStudentToString took 0.003 sec
-    [junit] Testcase: testStudentInit took 0.002 sec
+    [junit] Testcase: testStudentInit took 0.003 sec
 
 BUILD SUCCESSFUL
 Total time: 0 seconds
@@ -66,5 +67,5 @@ Total time: 0 seconds
 Lab is counted as working
 ================
 
-CSE247 Robot tester ends testing lab7 on 2017-11-11 13:02:06 -0600
+CSE247 Robot tester ends testing lab7 on 2017-11-15 21:45:41 -0600
 -------------------
