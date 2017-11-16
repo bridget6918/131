@@ -1,0 +1,75 @@
+-------------------
+CSE247 Robot tester starts testing lab7 on 2017-11-15 21:45:48 -0600
+
+========
+Testing in ./GradingRepos/./cse131-f17-students-bridget.wang: lab7 as of 2017-11-14 20:00
+========
+Now in: /Users/roncytron/Desktop/131f17/cse247-support/GradingRepos/cse131-f17-students-bridget.wang
+Your branch is up-to-date with 'origin/master'.
+HEAD is now at a962131 lab 8 term
+No local changes to save
+
+Updating a962131..ced5e6d
+Fast-forward
+ RoboGrade/lab7-First30Percent.txt | 21 +++++++++++----------
+ 1 file changed, 11 insertions(+), 10 deletions(-)
+Going back in time to: 2017-11-14 20:00
+At hash a96213103d7494db449279ae1d05d0d31ba48f38
+
+Buildfile: /Users/roncytron/Desktop/131f17/cse247-support/build.xml
+
+copytest:
+     [echo] would copy from /Users/roncytron/git2/cse131-f17-students key bridget.wang testfilesource Second30Percent package lab7 repo ./GradingRepos/./cse131-f17-students-bridget.wang
+     [copy] Copying 1 file to /Users/roncytron/Desktop/131f17/cse247-support/GradingRepos/cse131-f17-students-bridget.wang/labs/lab7
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Compiling the code
+Buildfile: /Users/roncytron/Desktop/131f17/cse247-support/build.xml
+
+compile:
+     [echo] Compiling lab7/Student
+    [mkdir] Created dir: /Users/roncytron/Desktop/131f17/cse247-support/GradingRepos/cse131-f17-students-bridget.wang/bin
+    [javac] Compiling 1 source file to /Users/roncytron/Desktop/131f17/cse247-support/GradingRepos/cse131-f17-students-bridget.wang/bin
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Buildfile: /Users/roncytron/Desktop/131f17/cse247-support/build.xml
+
+compile:
+     [echo] Compiling lab7/Course
+    [javac] Compiling 1 source file to /Users/roncytron/Desktop/131f17/cse247-support/GradingRepos/cse131-f17-students-bridget.wang/bin
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Buildfile: /Users/roncytron/Desktop/131f17/cse247-support/build.xml
+
+compile:
+     [echo] Compiling lab7/Second30Percent
+    [javac] Compiling 1 source file to /Users/roncytron/Desktop/131f17/cse247-support/GradingRepos/cse131-f17-students-bridget.wang/bin
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Running test Second30Percent
+Buildfile: /Users/roncytron/Desktop/131f17/cse247-support/build.xml
+
+test:
+    [junit] Running lab7.Second30Percent
+    [junit] Testsuite: lab7.Second30Percent
+    [junit] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+    [junit] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+    [junit] 
+    [junit] Testcase: testCreateLegacy took 0.009 sec
+    [junit] Testcase: testSubmitGrade took 0 sec
+    [junit] Testcase: testGetClassStanding took 0.001 sec
+    [junit] Testcase: testStudentToString took 0.002 sec
+    [junit] Testcase: testStudentInit took 0.001 sec
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+================
+Lab is counted as working
+================
+
+CSE247 Robot tester ends testing lab7 on 2017-11-15 21:45:53 -0600
+-------------------
