@@ -9,21 +9,20 @@ public class Controller {
 	
 	private final GameProperties game;
 	private final ProvidesGuess codeMaker, codeBreaker;
-	private final String name;
+	private final History history;
 	
 	public Controller(GameProperties g, ProvidesGuess codeMaker, ProvidesGuess codeBreaker) {
-		this.name        = g.getName();
 		this.game        = g;
 		this.codeMaker   = codeMaker;
 		this.codeBreaker = codeBreaker;
+		this.history     = new History(game);
 	}
 	
 	public void run() {
-		History hist = new History(game);
 		ConsolePrintingHistoryReceiver console = new ConsolePrintingHistoryReceiver(game.getName());
 		console.message(" ");
 		console.message("Game starts");
-		hist.addObserver(console);
+		history.addObserver(console);
 		boolean won = false;
 		boolean okMove = true;
 		do {
@@ -35,8 +34,8 @@ public class Controller {
 				console.message("Winner!");
 				won = true;
 			}
-			okMove = hist.registerGuess(guess);
-
+			okMove = history.registerGuess(guess);
+			
 //			console.output(code);
 //			console.message(" number exactly right position " + pf.numSamePosition(guess));
 //			console.message(" number of pegs in common color " + pf.numIntersection(guess));
@@ -50,6 +49,14 @@ public class Controller {
 		console.message("Game ends");
 		console.message(" ");
 
+	}
+	
+	public History getHistory() {
+		return this.history;
+	}
+	
+	public GameProperties getGameProperties() {
+		return this.game;
 	}
 	
 }

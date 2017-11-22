@@ -41,7 +41,8 @@ public class Main {
 		GameProperties interactive = new GameProperties("Interactive");
 		ProvidesColor pc      = new RandomColorProvider(interactive);
 		ProvidesGuess breaker = ColorChooser.launchChooser(interactive, pc);
-		new Controller(interactive, new StaticGuessProvider(interactive), breaker).run();
+		Controller c = new Controller(interactive, new StaticGuessProvider(interactive), breaker);
+		c.run();
 
 	}
 
