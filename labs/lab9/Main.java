@@ -1,5 +1,6 @@
 package lab9;
 
+import cse131.ArgsProcessor;
 import lab9.implementations.RandomColorProvider;
 import lab9.implementations.RandomGuessProvider;
 import lab9.implementations.StaticGuessProvider;
@@ -10,28 +11,46 @@ import lab9.viz.ColorChooser;
 public class Main {
 
 	public static void main(String[] args) {
-		// FIXME Auto-generated method stub
+		
+		ArgsProcessor ap = new ArgsProcessor(args);
 		
 		//
-		// Always wins
+		// Always wins -- code maker and breaker are the same
 		//
-		GameProperties alwaysWins = new GameProperties("Always wins");
+		GameProperties gameWins = new GameProperties("Always wins");
 
-		ProvidesGuess same = new StaticGuessProvider(alwaysWins);
-		new Controller(alwaysWins, same, same).run();
+		ProvidesGuess codeMaker = new StaticGuessProvider(gameWins);
+		
+		Controller cwins = new Controller(gameWins, codeMaker, codeMaker);
+		cwins.run();
+		
+		ap.nextString("Press enter to continue");
 		
 		//
 		// likely not to win, but should stop on the first repeated guess
 		//
-		GameProperties repeats = new GameProperties("Always same guess");
-		ProvidesGuess likelyDifferent = new StaticGuessProvider(repeats);
-		new Controller(repeats, same, likelyDifferent).run();
+		
+		GameProperties gameAlwaysSameGuess = new GameProperties("Always same guess");
+		//
+		// A new static guesser for the code breaker
+		//
+		ProvidesGuess likelyDifferent = new StaticGuessProvider(gameAlwaysSameGuess);
+		//
+		// reuse the code maker from above, but now use the new static code breaker
+		//
+		Controller cprobnowin = new Controller(gameAlwaysSameGuess, codeMaker, likelyDifferent);
+		cprobnowin.run();
+		ap.nextString("Press enter to continue");
 		
 		//
 		// Random guessing version, likely not to win
 		//
-		GameProperties random = new GameProperties("Random guesser");
-		new Controller(random, new StaticGuessProvider(random), new RandomGuessProvider(random)).run();
+		GameProperties randomGame = new GameProperties("Random guesser");
+		ProvidesGuess codeMaker2 = new StaticGuessProvider(randomGame);
+		ProvidesGuess randCodeBreaker = new RandomGuessProvider(randomGame);
+		Controller rcontroller = new Controller(randomGame, codeMaker2, randCodeBreaker);
+		rcontroller.run();
+		ap.nextString("Press enter to continue");
 				
 		
 		//
@@ -39,10 +58,15 @@ public class Main {
 		//
 		
 		GameProperties interactive = new GameProperties("Interactive");
+		ProvidesGuess codeMaker3 = new StaticGuessProvider(interactive);
+		//
+		// interactive breaker needs color provider
+		//
 		ProvidesColor pc      = new RandomColorProvider(interactive);
-		ProvidesGuess breaker = ColorChooser.launchChooser(interactive, pc);
-		Controller c = new Controller(interactive, new StaticGuessProvider(interactive), breaker);
+		ProvidesGuess interactiveBreaker = ColorChooser.launchChooser(interactive, pc);
+		Controller c = new Controller(interactive, codeMaker3, interactiveBreaker);
 		c.run();
+		ap.nextString("Press enter to continue");
 
 	}
 
