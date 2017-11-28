@@ -1,6 +1,7 @@
 package lab9;
 
 import java.util.Arrays;
+import java.util.Set;
 
 /**
  * A Guess has-an array of integers.
@@ -28,18 +29,18 @@ import java.util.Arrays;
  * This is a "friend" class for the project, in the sense that only trusted
  *    components create Guess instances.
  *      
- * @author yournamegoeshere
+ * @author bridgetwang
  *
  */
 public class Guess {
 	
-	
+	private int[] game;
 	/**
 	 * Capture the array of integers for use in other methods
 	 * @param guess
 	 */
 	public Guess(int[] guess) {
-		// FIXME
+		game = guess;
 	}
 	
 	/**
@@ -47,8 +48,7 @@ public class Guess {
 	 * @return the size of the array
 	 */
 	public int size() {
-		// FIXME
-		return 0;
+		return game.length;
 	}
 	
 	/**
@@ -60,20 +60,39 @@ public class Guess {
 	 * @return the value of the array at the specified index
 	 */
 	public int getChoice(int hole) {
-		// FIXME
-		return 0;
+		return game[hole];
 	}
 	
-	/**
-	 * Provide a nice depiction of the array as a String
-	 */
 	@Override
 	public String toString() {
-		return "FIXME in Guess";
+		return "Guess [game=" + Arrays.toString(game) + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(game);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Guess other = (Guess) obj;
+		if (!Arrays.equals(game, other.game))
+			return false;
+		return true;
 	}
 
 	//
 	// You must generate hashCode and equals !!
 	//
 
+	
 }
