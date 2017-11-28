@@ -13,9 +13,9 @@ import lab9.providers.ProvidesFeedback;
  *
  */
 public class HonestFeedback implements ProvidesFeedback {
-	
+
 	private final Guess code;
-	
+
 	/** 
 	 * Capture the code that will be compared with Guesses
 	 * @param code
@@ -37,10 +37,15 @@ public class HonestFeedback implements ProvidesFeedback {
 
 	@Override
 	public int numSamePosition(Guess other) {
-		// FIXME
-		return 0;
+		int num = 0;
+		for(int i=0;i < code.size();++i) {
+			if(code.getChoice(i) == other.getChoice(i)) {
+				num++;
+			}
+		}
+		return num;
 	}
-	
+
 	/**
 	 * Given the supplied Guess, how many peg ids are in common with the desired
 	 *    goal and the guess?
@@ -55,10 +60,20 @@ public class HonestFeedback implements ProvidesFeedback {
 
 	@Override
 	public int numIntersection(Guess other) {
-		// FIXME
-		return 0;
+		Set<Integer> s1 = new HashSet<Integer>();
+		for(int i=0;i<code.size();++i) {
+			s1.add(code.getChoice(i));
+		}
+		Set<Integer> s2 = new HashSet<Integer>();
+		for(int i=0;i<other.size();++i) {
+			s2.add(other.getChoice(i));
+		}
+		Set<Integer> same = new HashSet<Integer>(s1);
+		same.retainAll(s2);
+
+		return same.size();
 	}
-	
+
 	/**
 	 * Is the solution correct?   This can be reduced from numSamePosition(guess)
 	 *   returning an answer showing all pegs of the Guess are in the correct
@@ -68,8 +83,12 @@ public class HonestFeedback implements ProvidesFeedback {
 	 */
 
 	public boolean isSolution(Guess other) {
-		// FIXME
-		return false;
+		int ans = numSamePosition(other);
+		if(ans == code.size()) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
-
 }
