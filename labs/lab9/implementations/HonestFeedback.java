@@ -73,6 +73,7 @@ public class HonestFeedback implements ProvidesFeedback {
 
 		return same.size();
 	}
+	// looked at Stackoverflow for ideas(retainAll)
 
 	/**
 	 * Is the solution correct?   This can be reduced from numSamePosition(guess)
