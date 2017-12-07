@@ -1,5 +1,6 @@
 package cse131;
 
+import java.awt.EventQueue;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileInputStream;
@@ -131,7 +132,7 @@ public class ArgsProcessor {
 				}
 				);
 	}
-	
+
 	public boolean nextBoolean() {
 		return nextBoolean("A boolean");
 	}
@@ -178,7 +179,7 @@ public class ArgsProcessor {
 				return null;
 			else
 				ans = o.toString();
-			
+
 		}
 		++curArg;
 		return ans;
@@ -190,7 +191,7 @@ public class ArgsProcessor {
 	public static void useStdInput() {
 		useStdInput(System.getProperty("user.dir"),"");
 	}
-	
+
 	/**
 	 * Redirect input from the specified subdirectory (e.g., music) of the project
 	 * @param subdir
@@ -219,7 +220,7 @@ public class ArgsProcessor {
 		}
 
 	}
-	
+
 	/**
 	 * Pick a file from the project
 	 * @return the chosen file
@@ -228,7 +229,7 @@ public class ArgsProcessor {
 	public static File chooseFile() {
 		return chooseFile(System.getProperty("user.dir"));
 	}
-	
+
 	/**
 	 * Pick a file from a subdirectory (e.g., music) of the project
 	 * @param subdir specified subdirectory to begin the file-choosing
@@ -245,25 +246,39 @@ public class ArgsProcessor {
 	 * @return the chosen file
 	 */
 	private static File chooseFile(String topdir, String subdir) {
-		String directory = topdir + "/" + subdir;
-		JFileChooser fc = new JFileChooser();
-		fc.setCurrentDirectory(new File(directory));
-		fc.showOpenDialog(null);
+		final String directory = topdir + "/" + subdir;
+		try {
+			EventQueue.invokeAndWait(
+					new Runnable() {
+						@Override
+						public void run() {
+							fc = new JFileChooser();
+							fc.setCurrentDirectory(new File(directory));
+							fc.showOpenDialog(null);
+
+						}
+					}
+					);
+		}
+		catch (Throwable t) {
+			throw new Error("" + t);
+		}
 		return fc.getSelectedFile();
 	}
-	
+	private static JFileChooser fc;  
+
 	public static void useStdOutput(String subdir) {
 		JFileChooser chooser = new JFileChooser();
-	    chooser.setCurrentDirectory(new File(System.getProperty("user.dir")+"/"+subdir));
-	    if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-	        try {
-	            PrintStream ps = new PrintStream(new FileOutputStream(chooser.getSelectedFile()));
-	            System.setOut(ps);
-	        } catch (Exception ex) {
-	            ex.printStackTrace();
-	        }
-	    }
-		
+		chooser.setCurrentDirectory(new File(System.getProperty("user.dir")+"/"+subdir));
+		if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+			try {
+				PrintStream ps = new PrintStream(new FileOutputStream(chooser.getSelectedFile()));
+				System.setOut(ps);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+
 	}
 
 }
