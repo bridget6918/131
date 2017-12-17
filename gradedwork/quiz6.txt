@@ -1,6 +1,6 @@
 Greetings from your synthetically friendly robotic CSE131 grader!
 Quiz report for bridget.wang:
-Report prepared at Sun Dec 17 09:10:21 CST 2017
+Report prepared at Sun Dec 17 12:57:14 CST 2017
 
 Question:
    1) Which of the following calls directly invokes the base case? (20 pts)
@@ -22,7 +22,7 @@ Question:
    3) What is the value of foo(2)? (20 pts)
    Grading function: answer.include?("21")
    Your answer was: 21
-Nice job! You have earned 20 points.
+You have chosen wisely! You have earned 20 points.
 
 Explanation: Evaluating the C) response
 
@@ -30,7 +30,7 @@ Question:
    4) Which of the following describes funtions f and g (10 pts)
    Grading function: answer.include?("A)")
    Your answer was: A) f is McCarthy's function and g is Ackerman's function
-Nice job! You have earned 10 points.
+You have chosen wisely! You have earned 10 points.
 
 Explanation: Easy to see from the functions on the web: f is McCarthy and g is Ackerman
 
@@ -46,7 +46,7 @@ Question:
    6) What is remarkable about g?(10 pts)
    Grading function: answer.include?("D)")
    Your answer was: D) For some inputs, it will take a very long time to compute its result
-Way to go! You have earned 10 points.
+Glad you got that one! You have earned 10 points.
 
 Explanation: Ackerman's function takes a very long time to finish even when given relatively small inputs.
 
@@ -54,7 +54,7 @@ Question:
    7) Using substitution which cooresponds to a(4, 6)? (15 pts)
    Grading function: answer.include?("E)")
    Your answer was: E) 2 * (2 * (3 * ( 2 * 5)))
-Glad you got that one! You have earned 15 points.
+Way to go! You have earned 15 points.
 
 Explanation: Substitution yields 120 with the expression given for E)
 
