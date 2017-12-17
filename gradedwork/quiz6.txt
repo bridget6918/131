@@ -1,0 +1,62 @@
+Greetings from your synthetically friendly robotic CSE131 grader!
+Quiz report for bridget.wang:
+Report prepared at Sun Dec 17 09:10:21 CST 2017
+
+Question:
+   1) Which of the following calls directly invokes the base case? (20 pts)
+   Grading function: answer.include?("D)")
+   Your answer was: D) foo(-1)
+Way to go! You have earned 20 points.
+
+Explanation: The base case leads to no further recursion, and foo(-1) causes the method to return 0 and recurse no further
+
+Question:
+   2) Using substitution, which of the following corresponds to foo(2)? (20 pts)
+   Grading function: answer.include?("C)")
+   Your answer was: C) 2*(2*(2*0 + 3) + 3) + 3
+You have chosen wisely! You have earned 20 points.
+
+Explanation: There are three recursive calls, on 2, 1, and 0, followed by the base case
+
+Question:
+   3) What is the value of foo(2)? (20 pts)
+   Grading function: answer.include?("21")
+   Your answer was: 21
+Nice job! You have earned 20 points.
+
+Explanation: Evaluating the C) response
+
+Question:
+   4) Which of the following describes funtions f and g (10 pts)
+   Grading function: answer.include?("A)")
+   Your answer was: A) f is McCarthy's function and g is Ackerman's function
+Nice job! You have earned 10 points.
+
+Explanation: Easy to see from the functions on the web: f is McCarthy and g is Ackerman
+
+Question:
+   5) What is remarkable about f?(5 pts)
+   Grading function: answer.include?("C)")
+   Your answer was: C) It returns 91 when given an input 101 or smaller
+Glad you got that one! You have earned 5 points.
+
+Explanation: You should have seen from running f that it returns 91 on an input 101 or less.
+
+Question:
+   6) What is remarkable about g?(10 pts)
+   Grading function: answer.include?("D)")
+   Your answer was: D) For some inputs, it will take a very long time to compute its result
+Way to go! You have earned 10 points.
+
+Explanation: Ackerman's function takes a very long time to finish even when given relatively small inputs.
+
+Question:
+   7) Using substitution which cooresponds to a(4, 6)? (15 pts)
+   Grading function: answer.include?("E)")
+   Your answer was: E) 2 * (2 * (3 * ( 2 * 5)))
+Glad you got that one! You have earned 15 points.
+
+Explanation: Substitution yields 120 with the expression given for E)
+
+
+Your total score is 100.
