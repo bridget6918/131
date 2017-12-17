@@ -1,0 +1,54 @@
+I am your robotic CSE131 grader, and I provide the following report for your edification.
+Quiz report for bridget.wang:
+Report prepared at Sun Dec 17 13:44:56 CST 2017
+
+Question:
+   1) What method is called to instantiate an object? (20 pts)
+   Grading function: answer.include?("D)")
+   Your answer was: D) The object's constructor(s)
+Way to go! You have earned 20 points.
+
+Explanation: An class's constructor is responsible for instantiating objects
+
+Question:
+   2) What corresponds to the "has-a"s of an object's design? (20 pts)
+   Grading function: answer.include?("A)")
+   Your answer was: A) The object's instance variables
+Way to go! You have earned 20 points.
+
+Explanation: An object's instance variables are the has-a parts of a class story
+
+Question:
+   3) A Rectangle has-a length, width, and area. All three are integer values and all three values are of interest after a Rectangle has been constructed  What is the minimum number of int instance variables needed for the Rectangle? (20pts)
+   Grading function: answer.include?("C)")
+   Your answer was: C) 2
+You have chosen wisely! You have earned 20 points.
+
+Explanation: The area can be computed from the width and length
+
+Question:
+   4) What kind of method would return a CreditCard object's balance? (10 pts)
+   Grading function: answer.include?("B)")
+   Your answer was: B) The object's getters
+Way to go! You have earned 10 points.
+
+Explanation: A method that provides the balance instance variable's value would be a getter of the class
+
+Question:
+   5) What kind of method would change a CreditCard's balance? (10 pts)
+   Grading function: answer.include?("C)")
+   Your answer was: C) The object's setters
+You have chosen wisely! You have earned 10 points.
+
+Explanation: A setter is a method that changes the value of an instance variable
+
+Question:
+   6) A Candidate has-a name and a number of votes received.  There is a method public void voteFor() { ... } that casts one vote for this Candidate.  What is the minimum number of parameters the constructor for Candidate must have? (20pts)
+   Grading function: answer.include?("B)")
+   Your answer was: B) 1
+Glad you got that one! You have earned 20 points.
+
+Explanation: The votes change during the life of the object, but they start at zero, so only the name is needed as a parameter of the constructor.
+
+
+Your total score is 100.
