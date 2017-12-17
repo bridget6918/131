@@ -1,13 +1,12 @@
 I am your robotic CSE131 grader, and I provide the following report for your edification.
 Quiz report for bridget.wang:
-Report prepared at Sun Dec 17 07:19:26 CST 2017
+Report prepared at Sun Dec 17 08:04:25 CST 2017
 
 Question:
    Chose one:
-   Grading function: answer.include?("B)")
+   Grading function: answer.include?("B)") or answer.include?("A)")
    Your answer was: A) 1, 2, 3 only
-Too bad!  Be sure to see what went wrong. This cost you 40 points.
-Please see a TA or the instructor if you need help!
+You have chosen wisely! You have earned 40 points.
 
 Explanation: Parameter types, not names, are part of a method's signature
 
@@ -23,9 +22,9 @@ Question:
    Before the method foo actually executes, what values are pushed on top of the execution stack?
    Grading function: answer.include?("A)")
    Your answer was: A) 7 is on top, and 6 is underneath it
-Nice job! You have earned 40 points.
+You have chosen wisely! You have earned 40 points.
 
 Explanation: Parameter values are pushed from left to right
 
 
-Your total score is 60.
+Your total score is 100.
